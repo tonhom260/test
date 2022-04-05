@@ -18,7 +18,8 @@ class _MainFoodPageState extends State<MainFoodPage> {
             Column(
               children: [
                 Text('Country'),
-                Text('City')
+                Text('City'),
+                Text('DishEmpty')
 
               ],
             ),
