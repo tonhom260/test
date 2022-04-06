@@ -11,6 +11,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 320,
       child: PageView.builder(
           itemCount: 5,
           itemBuilder: (context,position){
@@ -22,6 +23,13 @@ class _FoodPageBodyState extends State<FoodPageBody> {
 
   Widget _buildPageItem(int index){
     return Container(
+      height: 220,
+      margin: EdgeInsets.only(left: 15,right: 15),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(30),
+        color: index.isEven?Color(0xFF69c5df):Color(0xFF9294cc),
+      ),
+
 
     );
   }
