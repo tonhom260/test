@@ -3,9 +3,10 @@ import 'package:flutter/cupertino.dart';
 class Bigtext extends StatelessWidget {
   final Color? color;
   final String text;
-  final double size;
-  final TextOverflow overFlow;
-  const Bigtext({Key? key, this.color,
+  double size;
+  TextOverflow overFlow;
+  Bigtext({Key? key,
+    this.color = const Color(0xFF332d2b),
     required this.text,
     this.size = 20.0,
     this.overFlow=TextOverflow.ellipsis})
@@ -16,7 +17,9 @@ class Bigtext extends StatelessWidget {
     return Text(
       text,
       overflow: overFlow,
-      style: TextStyle(fontSize: size,color: color,fontFamily: 'Roboto',
+      style: TextStyle(fontSize: size,
+          color: color,
+          fontFamily: 'Roboto',
           fontWeight: FontWeight.w400),
 
 

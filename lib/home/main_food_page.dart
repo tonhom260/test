@@ -1,3 +1,4 @@
+import 'package:ecommerce/widgets/big_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -24,8 +25,8 @@ class _MainFoodPageState extends State<MainFoodPage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Column(
-                  children: const [
-                    Text('Country'),
+                  children: [
+                    Bigtext(text: 'Bangladesh',color: AppColors.mainColor,size: 30,),
                     Text('City'),
                   ],
                 ),
