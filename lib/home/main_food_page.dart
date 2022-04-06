@@ -1,4 +1,5 @@
 import 'package:ecommerce/widgets/big_text.dart';
+import 'package:ecommerce/widgets/small_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -27,7 +28,7 @@ class _MainFoodPageState extends State<MainFoodPage> {
                 Column(
                   children: [
                     Bigtext(text: 'Bangladesh',color: AppColors.mainColor,size: 30,),
-                    Text('City'),
+                    Smalltext(text: 'City')
                   ],
                 ),
                 Center(
