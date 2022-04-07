@@ -14,7 +14,7 @@ class FoodPageBody extends StatefulWidget {
 }
 
 class _FoodPageBodyState extends State<FoodPageBody> {
-  PageController pageController = PageController(viewportFraction: 1.0);
+  PageController pageController = PageController(viewportFraction: 0.95);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
       color: Colors.white,
       height: 320,
       child: PageView.builder(
-          controller: PageController(viewportFraction: .9),
+          controller: pageController,
           itemCount: 5,
           itemBuilder: (context, position) {
             return _buildPageItem(position);
