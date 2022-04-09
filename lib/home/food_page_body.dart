@@ -17,6 +17,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
   PageController pageController = PageController(viewportFraction: 0.92);
   var _currPageValue=0.0;
   double _scaleFactor=0.8;
+  double _height =220;
 
 
   @override
@@ -54,19 +55,24 @@ class _FoodPageBodyState extends State<FoodPageBody> {
     Matrix4 matrix = new Matrix4.identity();
     if(index == _currPageValue.floor()){
       var currScale = 1-(_currPageValue-index)*(1-_scaleFactor);
-      matrix = Matrix4.diagonal3Values(1, currScale, 1);
-      // print('currScale/c1 = $currScale');
-      // print('index/c1 = $index');
+      var currTrans = _height*(1-currScale)/2;
+      matrix = Matrix4.diagonal3Values(1, currScale, 1)..setTranslationRaw(0, currTrans, 0);
+
     }else if(index ==_currPageValue.floor()+1){
       var currScale = _scaleFactor+(_currPageValue-index+1)*(1-_scaleFactor);
-      matrix = Matrix4.diagonal3Values(1, currScale, 1);
-      // print('currScale = $currScale');
-      // print('index = $index');
-    }else if(index ==_currPageValue.floor()+2){
-      matrix = Matrix4.diagonal3Values(1, 0.8, 1);
+      var currTrans = _height*(1-currScale)/2;
+      // matrix = Matrix4.diagonal3Values(1, currScale, 1);
+      matrix = Matrix4.diagonal3Values(1, currScale, 1)..setTranslationRaw(0, currTrans, 0);
+
+    }else if(index ==_currPageValue.floor()-1){
+      var currScale = 1-(_currPageValue-index)*(1-_scaleFactor);
+      var currTrans = _height*(1-currScale)/2;
+      // matrix = Matrix4.diagonal3Values(1, currScale, 1);
+      matrix = Matrix4.diagonal3Values(1, currScale, 1)..setTranslationRaw(0, currTrans, 0);
     }else {
-      var currScale = _scaleFactor+(_currPageValue-index-1)*(1-_scaleFactor);
-      matrix = Matrix4.diagonal3Values(1, currScale, 1);
+      var currScale = _scaleFactor;
+      var currTrans = _height*(1-currScale)/2;
+      matrix = Matrix4.diagonal3Values(1, currScale, 1)..setTranslationRaw(0, currTrans, 0);
     }
       return
        Transform(
