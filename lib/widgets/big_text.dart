@@ -1,3 +1,4 @@
+import 'package:ecommerce/utils/dimensions.dart';
 import 'package:flutter/cupertino.dart';
 
 class Bigtext extends StatelessWidget {
@@ -8,7 +9,7 @@ class Bigtext extends StatelessWidget {
   Bigtext({Key? key,
     this.color = const Color(0xFF332d2b),
     required this.text,
-    this.size = 20.0,
+    this.size = 0,
     this.overFlow=TextOverflow.ellipsis})
       : super(key: key);
 
@@ -17,7 +18,8 @@ class Bigtext extends StatelessWidget {
     return Text(
       text,
       overflow: overFlow,
-      style: TextStyle(fontSize: size,
+      style: TextStyle(
+          fontSize: size == 0 ? Dimensions.font20:size,
           color: color,
           fontFamily: 'Roboto',
           fontWeight: FontWeight.w400),

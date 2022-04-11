@@ -7,6 +7,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../widgets/icon_and_text_widget.dart';
 import '../utils/colors.dart';
+import '../utils/dimensions.dart';
 
 class FoodPageBody extends StatefulWidget {
   const FoodPageBody({Key? key}) : super(key: key);
@@ -99,9 +100,9 @@ class _FoodPageBodyState extends State<FoodPageBody> {
         children: [
           Container(
             height: _height,
-            margin: EdgeInsets.only(left: 5, right: 5),
+            margin: EdgeInsets.only(left: Dimensions.width10, right: Dimensions.width10),
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
+                borderRadius: BorderRadius.circular(Dimensions.radius30),
                 color: index.isEven ? Color(0xFF69c5df) : Color(0xFF9294cc),
                 image: const DecorationImage(
                     fit: BoxFit.cover,
@@ -111,7 +112,8 @@ class _FoodPageBodyState extends State<FoodPageBody> {
               alignment: Alignment.bottomCenter,
               child: Container(
                 height: Dimensions.pageViewTextContainer,
-                margin: const EdgeInsets.only(left: 45, right: 45, bottom: 20),
+                margin: EdgeInsets.only(
+                    left: Dimensions.width30, right: Dimensions.width30, bottom: Dimensions.height30),
                 decoration: BoxDecoration(
                   boxShadow: const [
                     BoxShadow(
@@ -132,13 +134,13 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                   color: Colors.white,
                 ),
                 child: Container(
-                  padding: EdgeInsets.only(top: 10, left: 15, right: 15),
+                  padding: EdgeInsets.only(top: 6, left: 15, right: 15),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Bigtext(text: "Chinese Side"),
-                      const SizedBox(
-                        height: 10,
+                       SizedBox(
+                        height: Dimensions.height20,
                       ),
                       Row(
                         children: [
@@ -162,8 +164,8 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                           Smalltext(text: "Comments")
                         ],
                       ),
-                      const SizedBox(
-                        height: 10,
+                       SizedBox(
+                        height: Dimensions.height10,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
