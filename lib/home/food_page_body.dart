@@ -1,11 +1,13 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:ecommerce/utils/colors.dart';
+import 'package:ecommerce/utils/dimensions.dart';
 import 'package:ecommerce/widgets/big_text.dart';
 import 'package:ecommerce/widgets/small_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../widgets/icon_and_text_widget.dart';
 import '../utils/colors.dart';
+
 class FoodPageBody extends StatefulWidget {
   const FoodPageBody({Key? key}) : super(key: key);
 
@@ -17,7 +19,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
   PageController pageController = PageController(viewportFraction: 0.92);
   var _currPageValue = 0.0;
   double _scaleFactor = 0.8;
-  double _height = 220;
+  double _height = Dimensions.pageViewContainer;
 
   @override
   void initState() {
@@ -38,28 +40,30 @@ class _FoodPageBodyState extends State<FoodPageBody> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [Container(
-      // color: Colors.white,
-      height: 320,
-      child: PageView.builder(
-          controller: pageController,
-          itemCount: 5,
-          itemBuilder: (context, position) {
-            return _buildPageItem(position);
-          }),
-    ),
-    DotsIndicator(
-    dotsCount: 5,
-    position:_currPageValue,
-    decorator: DotsDecorator(
-      activeColor: AppColors.mainColor,
-      size: const Size.square(9.0),
-      activeSize: const Size(18.0,9.0),
-      activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
-      spacing: EdgeInsets.all(10.0),
-    ),
-    )],
-
+      children: [
+        Container(
+          // color: Colors.white,
+          height: Dimensions.pageView,
+          child: PageView.builder(
+              controller: pageController,
+              itemCount: 5,
+              itemBuilder: (context, position) {
+                return _buildPageItem(position);
+              }),
+        ),
+        DotsIndicator(
+          dotsCount: 5,
+          position: _currPageValue,
+          decorator: DotsDecorator(
+            activeColor: AppColors.mainColor,
+            size: const Size.square(9.0),
+            activeSize: const Size(18.0, 9.0),
+            activeShape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(5.0)),
+            spacing: EdgeInsets.all(10.0),
+          ),
+        )
+      ],
     );
   }
 
@@ -94,7 +98,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
       child: Stack(
         children: [
           Container(
-            height: 250,
+            height: _height,
             margin: EdgeInsets.only(left: 5, right: 5),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(30),
@@ -106,18 +110,22 @@ class _FoodPageBodyState extends State<FoodPageBody> {
           Align(
               alignment: Alignment.bottomCenter,
               child: Container(
-                height: 105,
+                height: Dimensions.pageViewTextContainer,
                 margin: const EdgeInsets.only(left: 45, right: 45, bottom: 20),
                 decoration: BoxDecoration(
                   boxShadow: const [
-                    BoxShadow(offset: Offset(0, 5), color: Color(0xFFe8e8e8),
+                    BoxShadow(
+                      offset: Offset(0, 5),
+                      color: Color(0xFFe8e8e8),
                       blurRadius: 1.0,
                     ),
-                    BoxShadow(offset: Offset(-5, 0), color: Colors.white,
-
+                    BoxShadow(
+                      offset: Offset(-5, 0),
+                      color: Colors.white,
                     ),
-                    BoxShadow(offset: Offset(5, 0), color: Colors.white,
-
+                    BoxShadow(
+                      offset: Offset(5, 0),
+                      color: Colors.white,
                     )
                   ],
                   borderRadius: BorderRadius.circular(20),
@@ -158,6 +166,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                         height: 10,
                       ),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           IconAndTextWidget(
                               icon: Icons.circle_sharp,
@@ -176,7 +185,8 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                     ],
                   ),
                 ),
-              )),
+              )
+          ),
         ],
       ),
     );
