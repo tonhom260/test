@@ -5,9 +5,8 @@ import 'package:ecommerce/widgets/big_text.dart';
 import 'package:ecommerce/widgets/small_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../widgets/icon_and_text_widget.dart';
-import '../utils/colors.dart';
-import '../utils/dimensions.dart';
+import '../../widgets/icon_and_text_widget.dart';
+
 
 class FoodPageBody extends StatefulWidget {
   const FoodPageBody({Key? key}) : super(key: key);
@@ -98,36 +97,79 @@ class _FoodPageBodyState extends State<FoodPageBody> {
           ),
         ),
         //list of food and images
-        Container(
-          height: 800,
-          child: ListView.builder(
-            physics: AlwaysScrollableScrollPhysics(),
-            shrinkWrap: true,
-            itemCount: 10,
-            itemBuilder: (context,index){
-              return Container(
-                margin: EdgeInsets.only(left: Dimensions.width20,right: Dimensions.width20),
-                child: Row(
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(Dimensions.radius20),
-                          color: Colors.white38,
-                          image: DecorationImage(image:AssetImage('assets/image/food0.png'))
-                      ),
-                      width: 120,
-                      height:120 ,
-                    ),
-                    Container(child: Column(
-                      children: [],
-                    ),)
-                  ],
-                ),
-              );
-            },
-          ),
-        )
 
+        ListView.builder(
+          physics: NeverScrollableScrollPhysics(),
+          shrinkWrap: true,
+          itemCount: 15,
+          itemBuilder: (context, index) {
+            return Container(
+              margin: EdgeInsets.only(
+                  left: Dimensions.width20,
+                  right: Dimensions.width20,
+                  bottom: Dimensions.height10),
+              child: Row(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                        borderRadius:
+                            BorderRadius.circular(Dimensions.radius20),
+                        color: Colors.white38,
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage('assets/image/food0.png'),
+                        )),
+                    width: 120,
+                    height: 120,
+                  ),
+                  Expanded(
+                    child: Container(
+                        height: 100,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.only(
+                                topRight: Radius.circular(Dimensions.radius20),
+                                bottomRight:
+                                    Radius.circular(Dimensions.radius20))),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              left: Dimensions.width10,
+                              right: Dimensions.width10),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Bigtext(
+                                text: "Nutritious Fruit Meal in China",
+                              ),
+                              Smalltext(text: "With chinese characteristics"),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  IconAndTextWidget(
+                                      icon: Icons.circle_sharp,
+                                      text: "Normal",
+                                      iconColor: AppColors.iconColor1),
+                                  IconAndTextWidget(
+                                      icon: Icons.location_on,
+                                      text: "32min",
+                                      iconColor: AppColors.mainColor),
+                                  IconAndTextWidget(
+                                      icon: Icons.access_time_rounded,
+                                      text: "Normal",
+                                      iconColor: AppColors.iconColor2)
+                                ],
+                              )
+                            ],
+                          ),
+                        )),
+                  )
+                ],
+              ),
+            );
+          },
+        ),
       ],
     );
   }
