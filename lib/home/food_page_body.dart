@@ -66,21 +66,65 @@ class _FoodPageBodyState extends State<FoodPageBody> {
           ),
         ),
         //Popular text
-        SizedBox(height: Dimensions.height30,),
+        SizedBox(
+          height: Dimensions.height30,
+        ),
         Container(
           margin: EdgeInsets.only(left: Dimensions.width30),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.end,
-            children: [Bigtext(text: "Popular"),
-              SizedBox(width: Dimensions.width10,),
-              Container(
-                child: Bigtext(text: '.',color: Colors.black26,),
+            children: [
+              Bigtext(text: "Popular"),
+              SizedBox(
+                width: Dimensions.width10,
               ),
-              SizedBox(width: Dimensions.width10,),
-              Container(child: Smalltext(text: 'Food pairing',),)
-
+              Container(
+                margin: EdgeInsets.only(bottom: 2),
+                child: Bigtext(
+                  text: '.',
+                  color: Colors.black26,
+                ),
+              ),
+              SizedBox(
+                width: Dimensions.width10,
+              ),
+              Container(
+                child: Smalltext(
+                  text: 'Food pairing',
+                ),
+                margin: EdgeInsets.only(bottom: 2),
+              )
             ],
-
+          ),
+        ),
+        //list of food and images
+        Container(
+          height: 800,
+          child: ListView.builder(
+            physics: AlwaysScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemCount: 10,
+            itemBuilder: (context,index){
+              return Container(
+                margin: EdgeInsets.only(left: Dimensions.width20,right: Dimensions.width20),
+                child: Row(
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(Dimensions.radius20),
+                          color: Colors.white38,
+                          image: DecorationImage(image:AssetImage('assets/image/food0.png'))
+                      ),
+                      width: 120,
+                      height:120 ,
+                    ),
+                    Container(child: Column(
+                      children: [],
+                    ),)
+                  ],
+                ),
+              );
+            },
           ),
         )
 
@@ -120,7 +164,8 @@ class _FoodPageBodyState extends State<FoodPageBody> {
         children: [
           Container(
             height: _height,
-            margin: EdgeInsets.only(left: Dimensions.width10, right: Dimensions.width10),
+            margin: EdgeInsets.only(
+                left: Dimensions.width10, right: Dimensions.width10),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(Dimensions.radius30),
                 color: index.isEven ? Color(0xFF69c5df) : Color(0xFF9294cc),
@@ -133,7 +178,9 @@ class _FoodPageBodyState extends State<FoodPageBody> {
               child: Container(
                 height: Dimensions.pageViewTextContainer,
                 margin: EdgeInsets.only(
-                    left: Dimensions.width30, right: Dimensions.width30, bottom: Dimensions.height30),
+                    left: Dimensions.width30,
+                    right: Dimensions.width30,
+                    bottom: Dimensions.height30),
                 decoration: BoxDecoration(
                   boxShadow: const [
                     BoxShadow(
@@ -159,7 +206,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Bigtext(text: "Chinese Side"),
-                       SizedBox(
+                      SizedBox(
                         height: Dimensions.height20,
                       ),
                       Row(
@@ -184,7 +231,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                           Smalltext(text: "Comments")
                         ],
                       ),
-                       SizedBox(
+                      SizedBox(
                         height: Dimensions.height10,
                       ),
                       Row(
@@ -207,8 +254,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                     ],
                   ),
                 ),
-              )
-          ),
+              )),
         ],
       ),
     );
