@@ -23,6 +23,7 @@ class Dimensions {
   static double width45 = screenWidth/18.76;
 
   static double iconSize24 = screenHeight/35.17;
+  static double iconSize16 = screenHeight/52.75;
 
   static double divisionPortage50 = screenHeight*0.5;
   static double divisionPortage35 = screenHeight*0.35;

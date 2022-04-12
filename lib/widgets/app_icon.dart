@@ -1,3 +1,4 @@
+import 'package:ecommerce/utils/dimensions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -27,7 +28,7 @@ class AppIcon extends StatelessWidget {
       child: Icon(
         icon,
         color: iconColor,
-        size: 16,
+        size: Dimensions.iconSize16,
       ),
     );
   }
