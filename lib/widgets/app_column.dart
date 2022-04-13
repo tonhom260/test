@@ -7,9 +7,9 @@ import 'big_text.dart';
 import 'icon_and_text_widget.dart';
 
 class AppColumn extends StatelessWidget {
-  const AppColumn({Key? key, required this.text, this.fontSize=0}) : super(key: key);
+  const AppColumn({Key? key, required this.text}) : super(key: key);
 
-  final double fontSize;
+
   final String text;
 
 
@@ -19,7 +19,7 @@ class AppColumn extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Bigtext(text: text, size: fontSize, ),
+        Bigtext(text: text, size: Dimensions.font36,),
         SizedBox(
           height: Dimensions.height20,
         ),

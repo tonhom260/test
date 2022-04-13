@@ -245,7 +245,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                 ),
                 child: Container(
                   padding: EdgeInsets.only(top: 6, left: 15, right: 15),
-                  child: AppColumn(text:'Chinese Side',fontSize: 80,),
+                  child: AppColumn(text:'Chinese Side'),
                 ),
               )),
         ],
