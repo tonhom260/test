@@ -16,7 +16,7 @@ class ExpandableTextWidget extends StatefulWidget {
 
 class _ExpandableTextWidgetState extends State<ExpandableTextWidget> {
   bool hiddenText = true;
-  double textHeight = Dimensions.screenHeight / 5.63;
+  double textHeight = Dimensions.screenHeight / 3;
   late String firstText;
   late String secondText;
 
@@ -38,12 +38,12 @@ class _ExpandableTextWidgetState extends State<ExpandableTextWidget> {
   Widget build(BuildContext context) {
     return Container(
         child: secondText.isEmpty
-            ? Smalltext(
+            ? Smalltext(color: AppColors.paraColor,size: Dimensions.font16,
                 text: firstText,
               )
             : Column(
               children: [
-                Smalltext(text: hiddenText?firstText:(firstText + secondText)),
+                Smalltext(text: hiddenText?firstText+'....':(firstText + secondText),color: AppColors.paraColor,size: Dimensions.font16,),
                 Row(
                   children: [
                     Smalltext(text: "Show more",color: AppColors.mainColor),
