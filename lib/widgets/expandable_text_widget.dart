@@ -38,7 +38,7 @@ class _ExpandableTextWidgetState extends State<ExpandableTextWidget> {
   Widget build(BuildContext context) {
     return Container(
         child: secondText.isEmpty
-            ? Smalltext(color: AppColors.paraColor,size: Dimensions.font16,
+            ? Smalltext(height:1.8,color: AppColors.paraColor,size: Dimensions.font16,
                 text: firstText,
               )
             : Column(

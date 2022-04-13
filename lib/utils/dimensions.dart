@@ -36,5 +36,5 @@ class Dimensions {
   static double popularFoodImageSize = screenHeight/2.41;
 
 
-
+static double bottomNavWindowSize = screenHeight/6.83;
 }

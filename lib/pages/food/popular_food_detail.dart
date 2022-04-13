@@ -7,8 +7,7 @@ import '../../utils/colors.dart';
 import '../../widgets/app_icon.dart';
 import '../../widgets/big_text.dart';
 import '../../widgets/expandable_text_widget.dart';
-import '../../widgets/icon_and_text_widget.dart';
-import '../../widgets/small_text.dart';
+
 
 class PopularFoodDetail extends StatelessWidget {
   const PopularFoodDetail({Key? key}) : super(key: key);
@@ -75,9 +74,7 @@ class PopularFoodDetail extends StatelessWidget {
                           SizedBox(
                             height: Dimensions.height20,
                           ),
-                          ExpandableTextWidget(
-                              text:
-                                  'tssssssssssstssssssssstssssssssstsssssssstssssssssssssssssssssssffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffssssssssssssssffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffsssssssssssssffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffsssssssssssssffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffsssssssssssffffffffffffffftssssssssssstssssssssstssssssssstsssssssstssssssssssssssssssssssffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffssssssssssssssffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffsssssssssssssffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffsssssssssssssffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffsssssssssssfffffffffftssssssssssstssssssssstssssssssstsssssssstssssssssssssssssssssssffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffssssssssssssssffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffsssssssssssssffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffsssssssssssssffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffsssssssssssfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff'),
+                          ExpandableTextWidget(text:'ewrqereeeeewrqereeeeeeeeeeeewrqereeeeeeeeeeerewrqereeeeeeeeeeerrrrrrrewrqereeeeeeeeeeerrrrrrrrrrqqqqqqqqewrqereeeeeeeeeeerrrrrrrrrrqqqqqqqqqqqqqqqqqqewrqereeeeeeeeeeerrrrrrrrrrqqqqqqqqqqqqqqqqqqqqqqqewrqereeeeeeeeeeerrrrrrrrrrqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqewrqereeeeeeeeeeerrrrrrrrrrqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqrrrqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqrrrrrrrrrqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqrrrrrrrrrrqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqeeeeeeerrrrrrrrrrqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq'),
                         ],
                       )),
                     ))
@@ -123,7 +120,8 @@ class PopularFoodDetail extends StatelessWidget {
                   decoration: BoxDecoration(
                       color: AppColors.mainColor,
                       borderRadius: BorderRadius.circular(Dimensions.radius20)),
-                  child: Bigtext(text: '\$0.08 Add to cart'))
+                  child: Bigtext(text: '\$0.08 Add to cart',color: Colors.white,)
+              )
             ],
           ),
 
@@ -132,7 +130,7 @@ class PopularFoodDetail extends StatelessWidget {
               borderRadius: BorderRadius.only(
                   topRight: Radius.circular(Dimensions.radius20),
                   topLeft: Radius.circular(Dimensions.radius20))),
-          height: 120,
+          height: Dimensions.bottomNavWindowSize,
           padding: EdgeInsets.only(
               top: Dimensions.height30,
               bottom: Dimensions.height30,
