@@ -37,4 +37,7 @@ class Dimensions {
 
 
 static double bottomNavWindowSize = screenHeight/6.83;
+
+  //recommendedpage
+  static double recommendedImage = screenHeight/2.73;
 }
