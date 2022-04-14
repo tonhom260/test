@@ -43,10 +43,12 @@ class _ExpandableTextWidgetState extends State<ExpandableTextWidget> {
               )
             : Column(
               children: [
-                Smalltext(text: hiddenText?firstText+'....':(firstText + secondText),color: AppColors.paraColor,size: Dimensions.font16,),
+                Smalltext(text: hiddenText?firstText+'....':(firstText + secondText),color: AppColors.paraColor,size: Dimensions.font20
+
+                  ,height: 1.4,),
                 Row(
                   children: [
-                    Smalltext(text: "Show more",color: AppColors.mainColor),
+                    Smalltext(text: hiddenText?"Show more":'Show less',color: AppColors.mainColor,size: Dimensions.font16,),
                     InkWell(
                       onTap: (){
                         setState(() {

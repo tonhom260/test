@@ -82,8 +82,8 @@ class PopularFoodDetail extends StatelessWidget {
                 )),
           ],
         ),
-        bottomNavigationBar: Container(
-          // alignment: Alignment.center,
+        bottomNavigationBar:
+        Container(
 
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
