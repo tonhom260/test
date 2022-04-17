@@ -6,20 +6,20 @@ class ApiClient extends GetConnect implements GetxService{
   final String appBaseUrl;
 
   ApiClient({required this.appBaseUrl}){
-    baseUrl = appBaseUrl;//baseUrl is from GET PACKAGE
+    baseUrl = appBaseUrl;//baseUrl constant => is from GetConnect
     timeout = const Duration (seconds: 30);
     _mainHeaders={
       'Content-type' : 'application/json; charset=UTF-8',
-      'Authorization' : 'Bearer $token',
+      'Authorization' : 'Bearer $token'
     };
   }
 
   Future<Response> getData(String uri) async{
     try{
-      Response response = await get(uri);
+      Response response = await get(uri);//getxpackage get(uri)
       return response;
     }catch(e){
-      return Response(statusText: e.toString());
+      return Response(statusCode:1, statusText: e.toString());
     }
 
   }
