@@ -1,3 +1,4 @@
+import 'package:ecommerce/utils/app_constants.dart';
 import 'package:get/get.dart';
 import '../api/api_client.dart';
 
@@ -8,7 +9,7 @@ class PopularProductRepo extends GetxService{
 
   Future <Response> getPopularProductList() async {
   return await  apiClient.getData(
-      'http://mvs.bslmeiyu.com/api/v1/products/popular');
+      AppConstants.POPULAR_PORDUCT_URI);
   }
 
 }

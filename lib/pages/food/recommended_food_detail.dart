@@ -1,16 +1,21 @@
+import 'package:ecommerce/controllers/popular_product_controller.dart';
 import 'package:ecommerce/utils/colors.dart';
 import 'package:ecommerce/utils/dimensions.dart';
 import 'package:ecommerce/widgets/big_text.dart';
 import 'package:ecommerce/widgets/expandable_text_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import '../../widgets/app_icon.dart';
 
 class RecommendedFoodDetail extends StatelessWidget {
+
   RecommendedFoodDetail({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: CustomScrollView(
         slivers: [
