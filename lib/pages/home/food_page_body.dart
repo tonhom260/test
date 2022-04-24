@@ -1,10 +1,12 @@
 import 'package:dots_indicator/dots_indicator.dart';
+import 'package:ecommerce/controllers/popular_product_controller.dart';
 import 'package:ecommerce/utils/colors.dart';
 import 'package:ecommerce/utils/dimensions.dart';
 import 'package:ecommerce/widgets/big_text.dart';
 import 'package:ecommerce/widgets/small_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../../widgets/app_column.dart';
 import '../../widgets/icon_and_text_widget.dart';
 
@@ -43,16 +45,16 @@ class _FoodPageBodyState extends State<FoodPageBody> {
     return Column(
       children: [
         //slider section
-        Container(
-          // color: Colors.white,
-          height: Dimensions.pageView,
-          child: PageView.builder(
-              controller: pageController,
-              itemCount: 5,
-              itemBuilder: (context, position) {
-                return _buildPageItem(position);
-              }),
-        ),
+       GetBuilder<PopularProductController>(builder: (_)=> Container(
+         // color: Colors.white,
+         height: Dimensions.pageView,
+         child: PageView.builder(
+             controller: pageController,
+             itemCount: _.popularProductList.length,
+             itemBuilder: (context, position) {
+               return _buildPageItem(position);
+             }),
+       ),),
         DotsIndicator(
           dotsCount: 5,
           position: _currPageValue,

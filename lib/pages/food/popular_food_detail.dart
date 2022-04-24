@@ -99,8 +99,7 @@ class PopularFoodDetail extends StatelessWidget {
                     borderRadius: BorderRadius.circular(Dimensions.radius20)),
                 child: Row(
                   children: [
-                    InkWell(
-                        child: Bigtext(
+                    InkWell(child: Bigtext(
                       text: '-',
                       size: Dimensions.font26,
                     )),
