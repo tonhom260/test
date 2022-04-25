@@ -1,4 +1,5 @@
 import 'package:ecommerce/utils/app_constants.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 class ApiClient extends GetConnect implements GetxService{
@@ -17,12 +18,12 @@ class ApiClient extends GetConnect implements GetxService{
   }
 
 
-  Future<Response> getData(String uri) async{
+  Future<String?> getData(String uri) async{
     try{
-      Response response = await get(uri);//getxpackage get(uri)
+      String response = await rootBundle.loadString(uri);//getxpackage get(uri)
       return response;
     }catch(e){
-      return Response(statusCode:1, statusText: e.toString());
+      print('fail fetch');
     }
 
   }
