@@ -6,6 +6,8 @@ import 'controllers/popular_product_controller.dart';
 import 'helper/dependencies.dart' as dep;
 import 'package:get/get.dart';
 
+
+
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await dep.init();
@@ -29,3 +31,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
