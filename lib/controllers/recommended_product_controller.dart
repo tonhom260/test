@@ -1,27 +1,26 @@
-import 'package:ecommerce/data/repository/popular_product_repo.dart';
+import 'dart:convert';
 import 'package:get/get.dart';
 import '../models/products_model.dart';
 
 class RecommendedProductController extends GetxController{
 
 
-  // final RecommendedProductRepo popularProductRepo;
-  List<dynamic> _recommendedProductList = [];
-  List<dynamic> get recommendedProductList  => _recommendedProductList;
+  // final RecommendedProductRepo recommendedProductRepo;
+  List<ProductModel> _recommendedProductList = [];
+  List<ProductModel> get recommendedProductList  => _recommendedProductList;
 
-  // RecommendedProductController({required this.popularProductRepo});
+  // RecommendedProductController({required this.recommendedProductRepo});
 
 
   // Future<void> getRecommendedProductList()async{
-  //   Response response = await popularProductRepo.getPopularProductList();
-  //   if(response.statusCode == 200 ){
+    // String? response = await recommendedProductRepo.getPopularProductList();
+  //   if(response != null ){
   //     print('got products');
-  //     _popularProductList = [];
-  //     _popularProductList.addAll(Product.fromJson(response.body).products);
-  //     print(_popularProductList);
+  //     _recommendedProductList = [];
+  //     _recommendedProductList.addAll(Product.fromJson(jsonDecode(response)).products);
+  //     print(_recommendedProductList);
   //     update();
   //   }else{}
   // }
-  //
 
 }

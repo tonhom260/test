@@ -55,8 +55,8 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                return _buildPageItem(position);
              }),
        ),),
-        DotsIndicator(
-          dotsCount: 5,
+        GetBuilder<PopularProductController>(builder: (_)=>DotsIndicator(
+          dotsCount: _.popularProductList.length,
           position: _currPageValue,
           decorator: DotsDecorator(
             activeColor: AppColors.mainColor,
@@ -66,7 +66,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                 borderRadius: BorderRadius.circular(5.0)),
             spacing: EdgeInsets.all(10.0),
           ),
-        ),
+        ),),
         //Popular text
         SizedBox(
           height: Dimensions.height30,
