@@ -17,7 +17,6 @@ class ApiClient extends GetConnect implements GetxService{
     };
   }
 
-
   Future<String?> getData(String uri) async{
     try{
       String response = await rootBundle.loadString(uri);//getxpackage get(uri)
