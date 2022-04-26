@@ -1,6 +1,5 @@
 import 'package:ecommerce/data/repository/popular_product_repo.dart';
 import 'package:get/get.dart';
-import 'dart:convert';
 import '../models/products_model.dart';
 
 class PopularProductController extends GetxController{

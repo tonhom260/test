@@ -7,6 +7,7 @@ class ApiClient extends GetConnect implements GetxService{
   final String appBaseUrl;
 
   ApiClient({required this.appBaseUrl}){
+    allowAutoSignedCert = true;//Github บอกแบบนี้เลยลองใส่ดู
     baseUrl = appBaseUrl;//baseUrl constant => is from GetConnect
     timeout = const Duration (seconds: 30);
     token = AppConstants.TOKEN;
