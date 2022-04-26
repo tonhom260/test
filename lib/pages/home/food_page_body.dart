@@ -1,5 +1,7 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:ecommerce/controllers/popular_product_controller.dart';
+import 'package:ecommerce/models/products_model.dart';
+import 'package:ecommerce/utils/app_constants.dart';
 import 'package:ecommerce/utils/colors.dart';
 import 'package:ecommerce/utils/dimensions.dart';
 import 'package:ecommerce/widgets/big_text.dart';
@@ -50,13 +52,14 @@ class _FoodPageBodyState extends State<FoodPageBody> {
          height: Dimensions.pageView,
          child: PageView.builder(
              controller: pageController,
-             itemCount: _.popularProductList.length,
+             itemCount: _.popularProductList.length<=0?1:_.popularProductList.length,
              itemBuilder: (context, position) {
-               return _buildPageItem(position);
+               return _buildPageItem(position,_.popularProductList[position]);
              }),
-       ),),
-        DotsIndicator(
-          dotsCount: 5,
+         ),
+       ),
+        GetBuilder<PopularProductController>(builder: (_)=>DotsIndicator(
+          dotsCount: _.popularProductList.length<=0?1:_.popularProductList.length,
           position: _currPageValue,
           decorator: DotsDecorator(
             activeColor: AppColors.mainColor,
@@ -66,7 +69,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                 borderRadius: BorderRadius.circular(5.0)),
             spacing: EdgeInsets.all(10.0),
           ),
-        ),
+        ),),
         //Popular text
         SizedBox(
           height: Dimensions.height30,
@@ -177,7 +180,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
     );
   }
 
-  Widget _buildPageItem(int index) {
+  Widget _buildPageItem(int index, ProductModel data) {
     Matrix4 matrix = new Matrix4.identity();
     if (index == _currPageValue.floor()) {
       var currScale = 1 - (_currPageValue - index) * (1 - _scaleFactor);
@@ -214,9 +217,13 @@ class _FoodPageBodyState extends State<FoodPageBody> {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(Dimensions.radius30),
                 color: index.isEven ? Color(0xFF69c5df) : Color(0xFF9294cc),
-                image: const DecorationImage(
+                image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: AssetImage("assets/image/food0.png"))),
+                    image: NetworkImage(
+                        AppConstants.BASE_URL+"/uploads/"+data.img!
+                    )
+                )
+            ),
           ),
           Align(
               alignment: Alignment.bottomCenter,

@@ -5,6 +5,9 @@ import 'package:flutter/material.dart';
 import 'controllers/popular_product_controller.dart';
 import 'helper/dependencies.dart' as dep;
 import 'package:get/get.dart';
+import 'dart:io';
+
+
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,7 +28,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:  PopularFoodDetail(),//PopularFoodDetail MainFoodPage
+      home:  MainFoodPage(),//PopularFoodDetail MainFoodPage
     );
   }
 }
