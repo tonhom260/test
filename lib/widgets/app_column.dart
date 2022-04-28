@@ -7,15 +7,16 @@ import 'big_text.dart';
 import 'icon_and_text_widget.dart';
 
 class AppColumn extends StatelessWidget {
-  const AppColumn({Key? key, required this.text}) : super(key: key);
+  AppColumn({Key? key, required this.text,this.starPoint=0}) : super(key: key);
 
-
+  int starPoint;
   final String text;
 
 
 
   @override
   Widget build(BuildContext context) {
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -27,14 +28,14 @@ class AppColumn extends StatelessWidget {
           children: [
             Wrap(
               children: List<Widget>.generate(
-                  5,
+                  starPoint,
                       (index) => Icon(Icons.star,
                       color: AppColors.mainColor, size: 15)),
             ),
             const SizedBox(
               width: 10,
             ),
-            Smalltext(text: '4.5'),
+            Smalltext(text: starPoint.toString()),
             const SizedBox(
               width: 10,
             ),
